@@ -10,7 +10,7 @@ const Main = {
     this.$checkButtons = document.querySelectorAll('.check')
     this.$inputTask = document.querySelector('#inputTask')
     this.$list = document.querySelector('#list')
-   /*  this.$removeButtons = document.querySelectorAll('.remove') */
+    this.$removeButtons = document.querySelectorAll('.remove')
   },
 
   bindEvents: function() {
@@ -63,8 +63,20 @@ const Main = {
         this.bindEvents()
       }
     },
+
+    removeButton_click: function(e){
+      let li = e.target.parentElement
+
+      li.classList.add('removed')
+
+      setTimeout(function(){
+        li.classList.add('hidden')
+      },300)
+    }
   }
 }
+
+
 Main.init()
 
 
